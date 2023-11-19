@@ -1,0 +1,47 @@
+program CharacterCount;
+
+uses
+  SysUtils;
+
+var
+  c: Char;
+  vowel, length, word: Integer;
+  space: Char;
+
+begin
+  writeln('Hello world!');
+  writeln('In this project, we will write an algorithm that reads a sentence and determines the length of the sentence''s characters.');
+
+  // We should define a character
+  // We will read the sentence as characters, not as strings
+  // So we will declare a character
+
+  space := ' ';
+  vowel := 0;
+  length := 0;
+  word := 0; // number of words
+
+  while True do
+  begin
+    read(c);
+    if c = '0' then
+      Break;
+
+    length := length + 1;
+
+    if c = space then
+    begin
+      word := word + 1;
+    end;
+
+    if (c = 'a') or (c = 'A') or (c = 'e') or (c = 'E') or (c = 'i') or (c = 'I') or (c = 'o') or (c = 'O') or (c = 'U') or (c = 'u') then
+    begin
+      vowel := vowel + 1;
+    end;
+  end;
+
+  writeln('The number of characters in the phrase is ', length);
+  writeln('The number of words in the phrase is ', word);
+  writeln('The number of vowels in the phrase is ', vowel);
+
+end.
